@@ -67,6 +67,11 @@ Drive structure understanding
 Migration planning
 Security and permission reviews
 Audit documentation
+Google Drive audits
+Access cleanup
+Folder structure analysis
+Migration preparation (Google → OneDrive, etc.)
+Compliance documentation
 
 ## Team Leads, Project Managers, Department Heads
 Use it to:
@@ -74,6 +79,13 @@ View team folder contents at a glance
 Track what is stored where
 Identify cleanup opportunities
 Monitor project artifacts
+Often need:
+
+A high-level inventory
+File counts
+Insights into team Drive usage
+Duplicate folder structures
+Recently modified content
 
 
 ## Compliance, Legal, Finance, and Audit Teams
@@ -82,6 +94,11 @@ Timestamp-based evidence
 Structured metadata exports
 Compliance documentation
 Drive activity snapshotting
+Document trails
+Evidence gathering
+Age analysis
+Modification tracking
+Ownership tagging
 
 ## Educators, Nonprofits, Freelancers, Students
 Use it to:
@@ -93,6 +110,12 @@ Track academic or volunteer file sets
 ## Personal and Power Users
 Use it when your Drive becomes too large or disorganized.
 Perfect for deep organization, cleanup, or visualization.
+
+Ideal for:
+Organizing huge personal Drives
+Tracking old or misplaced files
+Understanding shared Drive structures
+Anyone who has ever felt lost inside Google Drive benefits from this tool.
 
 # Use Cases
 ## Full Drive Inventory
