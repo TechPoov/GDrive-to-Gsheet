@@ -1,4 +1,0 @@
-This is a placeholder file.
-
-Replace this with the actual GDrive-to-Gsheet source code
-(e.g., Google Apps Script, Python, or another language).
