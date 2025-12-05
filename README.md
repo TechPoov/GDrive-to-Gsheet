@@ -1,209 +1,185 @@
-# 🖥 Overview
-Gdrive-To-Gsheet is an advanced Google Apps Script utility designed to scan any Google Drive folder and generate a structured, formatted, and analysis-ready Google Sheet output.
+GDrive-to-GSheet V1.0 Overview
+==============================
 
-It supports files, folders, metadata, deep folder trees, multiple profiles, resume-based execution, and custom column preservation — all in a user-friendly, reliable workflow.
+GDrive-to-GSheet is a lightweight TechPoov utility that scans any Google Drive folder and generates a clean, structured, clickable report in Google Sheets. It captures every file and folder with metadata---paths, types, owners, timestamps, sizes - making it Ideal for audits, cleanup projects, large-drive analysis, or quick visibility. 
 
-Perfect for teams and individuals performing audits, compliance checks, inventory management, migrations, or simply trying to understand the structure of a complex Drive hierarchy. 
+No installation, scripting knowledge, or admin rights required.
+
+It's simply a powerful organizational tool for maintaining a clean and well-documented Drive structure.
+
+The tool supports scanning Files, Folders, or Both, applies depth limits through MaxDepth, and runs reliably even during long multi-level scans. User-added columns (Tags, Comments, Notes, Category, subcategory ) are automatically preserved across runs, allowing long-term organization and maintenance.
+
 [Download Link](https://github.com/TechPoov/GDrive-to-Gsheet/releases)  ![GitHub all releases](https://img.shields.io/github/downloads/TechPoov/GDrive-to-Gsheet/total.svg)
 
-# Features
-## 1. Multi-Profile Scan Engine
-Set up multiple scan jobs in the Profiles sheet. Each profile runs independently with its own Name, Folder ID, Mode, and Depth limits.
 
-## 2. Three Powerful Scan Modes
-Files — scans only files
-Folders — scans only folders with folder-level metrics
-Both — full content + folder structure, ideal for audits
+* * * * *
 
-## 3. Time-Sliced Smart Worker
-Large folder trees often time out in Google Apps Script.
-This tool avoids that by using a resume-safe, slice-based worker system:
+Features
+========
 
-Handles tens of thousands of items
-Never exceeds script limits
-Automatically continues in the background
-Robust against interruptions
+-   Multi-Profile Scan Engine
 
-## 4. Automatic Resume
+-   Scans Files, Folders, or Both, based on profile settings
 
-If a scan is interrupted (quota hit, script time, browser close):
-State is saved
-Tool picks up exactly where it stopped
-No duplicates, no resets, no lost time
+-   Depth control using MaxDepth (0 = unlimited)
 
-## 5. Custom Column Preservation
-If you add custom columns (Owner, ReviewedBy, Status, etc.):
-They are not deleted
-The tool merges them back into new scan results
-Perfect for manual tagging, governance, or cleanup workflows
+-   Runs entirely in your Google Drive +  Google Sheets 
 
-## 6. Clean, Professional Output Format
+-   Continues scanning even if the browser closed or shut down your computer
 
-Each output sheet includes:
-Hyperlinked file or folder names
-Fixed-width columns for Path and File/Name
-Auto-resized metadata columns
-Hidden technical columns (ID)
-Optional raw URL column (if enabled)
+-   Generates clickable hyperlinks for easy previewing.
 
-## 7. Profile-Level Navigation
+-   Live progress updates appear in the Profiles sheet
 
-Upon completion:
-The ProfileName becomes a hyperlink
-Clicking it jumps directly to the output sheet
-Older output is archived as <ProfileName>_Old
+-   Preserves your custom annotation columns across runs
 
-## 8. Lightweight & Admin-Friendly
-No external libraries.
-No add-ons.
-Runs inside your Google Sheet.
-No installation for end users.
+-   Creates a rollover backup (<ProfileName>_Old) for every scan
 
-# Who Needs This Tool
-## IT, Infrastructure, and Workspace Administrators
-Use it for:
-File/folder inventories
-Drive structure understanding
-Migration planning
-Security and permission reviews
-Audit documentation
-Google Drive audits
-Access cleanup
-Folder structure analysis
-Migration preparation (Google → OneDrive, etc.)
-Compliance documentation
+-   Produces clean, consistent, well-structured output sheets 
 
-## Team Leads, Project Managers, Department Heads
+-   Lightweight & Admin-Friendly
+
+* * * * *
+
+Who Needs This Tool
+===================
+
+Personal and Power Users
+------------------------
+
+GDrive-to-GSheet isn’t just a scanner—it becomes the filing system your Google Drive always needed.
+In one click, your entire Drive transforms into a clean, searchable spreadsheet where everything has a place, and nothing gets lost.
+
+Add your own custom columns—Category, Sub-Category, Tags, Priority, anything—and your Drive begins to work the way you think.
+No more digging through endless folders.
+No more wondering where a file went.
+No more chaos.
+
+Whether you know basic Excel or advanced formulas, the tool grows with you:
+
+Beginners get clarity.
+
+Power users get a flexible productivity engine.
+
+Everyone gets control.
+
+IT, Infrastructure, and Workspace Administrators
+------------------------------------------------
+
+Perfect for:
+
+- File/folder inventories
+
+- Drive structure visibility
+
+- Migration planning
+
+- Security & permission reviews
+
+- Audit documentation
+
+- Access cleanup
+
+- Folder structure mapping
+
+- Compliance exports
+
+- Pre-migration checks (Google → OneDrive etc.)
+
+Team Leads, Project Managers, Department Heads
+----------------------------------------------
+
 Use it to:
-View team folder contents at a glance
-Track what is stored where
-Identify cleanup opportunities
-Monitor project artifacts
-Often need:
 
-A high-level inventory
-File counts
-Insights into team Drive usage
-Duplicate folder structures
-Recently modified content
+- View team folder contents at a glance
 
+- Track where documents are stored
 
-## Compliance, Legal, Finance, and Audit Teams
-Use it for:
-Timestamp-based evidence
-Structured metadata exports
-Compliance documentation
-Drive activity snapshotting
-Document trails
-Evidence gathering
-Age analysis
-Modification tracking
-Ownership tagging
+- Identify cleanup opportunities
 
-## Educators, Nonprofits, Freelancers, Students
-Use it to:
-Organize course materials
-Map archival resources
-Prepare project handoff documents
-Track academic or volunteer file sets
+- Monitor project artifacts
 
-## Personal and Power Users
-Use it when your Drive becomes too large or disorganized.
-Perfect for deep organization, cleanup, or visualization.
+- Review recently modified content
 
-Ideal for:
-Organizing huge personal Drives
-Tracking old or misplaced files
-Understanding shared Drive structures
-Anyone who has ever felt lost inside Google Drive benefits from this tool.
+- Compare folder structures across teams
 
-# Use Cases
-## Full Drive Inventory
-Map an entire Drive hierarchy into a sortable, filterable sheet.
+Compliance, Legal, Finance, and Audit Teams
+-------------------------------------------
 
-## Migration Preparation
-Before migrating to SharePoint, OneDrive, Dropbox, etc., assess:
-Folder depth
-File counts
-Last modified activity
-Structure complexity
+Supports:
 
+- Timestamp-driven evidence
 
-## Cleanup & Optimization
-Identify:
-Empty folders
-Unused or old files
-Rare file types
-Redundant structures
+- Structured metadata exports
 
-## Compliance & Audit Reporting
-Generate metadata needed for:
-Financial audits
-Security reviews
-Legal documentation
-IT governance
+- Document trails
 
-## Project Documentation
-Snapshot a Drive folder for project closure or client handoff.
+- Activity snapshotting
 
-## Custom Tagging Workflows
-Because custom columns persist, users can add:
-Review status
-Ownership
-Priority
-Risk classification
+- Age analysis
 
-# How It Works 
-For installation steps, configuration details, and usage instructions, refer to the QuickStart Guide included in the Downloads section.
+- Ownership verification
 
-# 6. Benefits
-## Saves Time & Manual Effort
-Eliminates the need to manually explore deep Drive structures.
-## Audit-Ready Reports
-Includes metadata, hyperlinks, timestamps, and structured rows suitable for reporting.
-## Zero Training Required
-Non-technical users can operate the tool from a single menu click.
-## Works with Any Analysis Tool
-Output is compatible with:
-Google Sheets
-Excel
-Power BI
-CSV workflows
-Data Studio / Looker
+- Modification tracking
 
-## Team-Friendly
-Since everything runs inside Google Sheets, teams use it without installing anything.
+Educators, Nonprofits, Freelancers, Students
+--------------------------------------------
 
-# Download Contents
-## Gdrive-To-Gsheet — Copyable Google Sheet Template  
-Link in QuickStart or User Manual -  Ready to duplicate and start scanning immediately.
+Helpful for:
 
-## QuickStart Guide
-A concise one-page introduction.
+- Organizing course materials
 
-## User Manual
-Full documentation with screenshots and workflows.
+- Mapping archival resources
 
-# What This Tool Does Not Do
-Does not delete, modify, or move Drive files
-Does not change file permissions
-Does not perform real-time Drive monitoring
-Does not replace admin-level audit logs
-Does not analyze content inside files (only metadata)
-This tool is strictly read-only and metadata-focused for safety.
+- Preparing project handoff documents
 
-# Requirements
-A Google Workspace or personal Google account
-Access to the Drive folders you want to scan
-One-time authorization during first execution
+- Tracking academic or volunteer files
 
-# Version History
-V1.0 - Initial base version. 
-# License
-Distributed under the MIT License.
-# Support
-For help, feature requests, or feedback:
-📧 techpoov+GDrive-to-GSheet@gmail.com
+Requirements
+============
 
-🌐 https://techpoov.github.io
+-   A valid Google Account
 
+-   Access to the Google Drive folders being scanned
+
+-   First-time authorization (Google will display the standard "unverified app" warning)
+
+* * * * *
+
+Get Tool and Documents
+======================
+
+-   [Tool](https://github.com/TechPoov/GDrive-to-Gsheet/releases)
+
+-   [User Manual V1.0](https://docs.google.com/document/d/1yM20jOvYvxCeqIBKuDGzigvi9NLufmQLAMrJwFylpkA/edit?usp=sharing)
+
+-   [Test Cases for reference](https://docs.google.com/spreadsheets/d/1sOd-GVb3yurnIX46r9vYiHX3NdsI2oonV1bBXl4OrjU/edit?gid=0#gid=0)
+
+Version History
+===============
+
+V1.0 --- 01- Nov - 2025   Initial release
+
+* * * * *
+
+License
+=======
+
+This project is released under the MIT License, a widely used open-source license that allows personal, commercial, and organizational use with minimal restrictions. Users are free to use, modify, distribute, and incorporate the code into their own projects, provided that the original copyright notice and license terms are included in all copies or substantial portions of the software.
+
+* * * * *
+
+Support
+=======
+
+If you need help, have questions, or want to share feedback, support is always available.
+
+🌐 Online Documents:\
+Visit the official TechPoov documentation at https://techpoov.github.io
+
+📧 Email Support:\
+techpoov+GDrive-to-Gsheet@gmail.com
+
+🐞 Report Issues on GitHub:\
+Submit bugs, feature requests, or enhancement ideas here:\
+https://github.com/TechPoov/GDrive-to-Gsheet/issues
